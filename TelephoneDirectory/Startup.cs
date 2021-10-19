@@ -10,6 +10,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using TelephoneDirectory.Models;
+using TelephoneDirectory.Services;
 
 namespace TelephoneDirectory
 {
@@ -32,6 +33,10 @@ namespace TelephoneDirectory
             services.AddSingleton<ITelephoneDirectoryDatabaseSettings>(sp =>
                 sp.GetRequiredService<IOptions<TelephoneDirectoryDatabaseSettings>>().Value);
             services.AddControllersWithViews();
+
+            services.AddScoped<PersonService>();
+            services.AddScoped<ContactService>();
+            services.AddScoped<ReportService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

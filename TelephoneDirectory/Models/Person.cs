@@ -10,7 +10,6 @@ namespace TelephoneDirectory.Models
     public class Person
     {
         [BsonId]
-        [BsonRepresentation(BsonType.ObjectId)]
         public Guid Id { get; set; }
 
         [BsonElement("Ad")]
@@ -23,5 +22,8 @@ namespace TelephoneDirectory.Models
         public string Company { get; set; }
 
         public IList<Contact> Contacts { get; set; }
+
+        [BsonIgnore]
+        public IList<Contact> ContactList { get; set; }
     }
 }

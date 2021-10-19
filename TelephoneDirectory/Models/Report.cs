@@ -11,7 +11,6 @@ namespace TelephoneDirectory.Models
     public class Report
     {
         [BsonId]
-        [BsonRepresentation(BsonType.ObjectId)]
         public Guid Id { get; set; }
 
         [BsonElement("Rapor Talep Tarihi")]

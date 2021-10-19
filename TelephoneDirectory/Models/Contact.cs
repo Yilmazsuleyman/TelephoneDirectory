@@ -11,7 +11,6 @@ namespace TelephoneDirectory.Models
     public class Contact
     {
         [BsonId]
-        [BsonRepresentation(BsonType.ObjectId)]
         public Guid Id { get; set; }
 
         [BsonElement("Bilgi Tipi")]
@@ -25,10 +24,5 @@ namespace TelephoneDirectory.Models
         };
         [BsonElement("Bilgi İçeriği")]
         public string InformationContent { get; set; }
-
-        [BsonElement("Kişi")]
-        public Guid PersonId{ get; set; }
-
-        public virtual Person Person { get; set; }
     }
 }
