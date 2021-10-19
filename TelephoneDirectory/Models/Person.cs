@@ -13,15 +13,15 @@ namespace TelephoneDirectory.Models
         [BsonRepresentation(BsonType.ObjectId)]
         public Guid Id { get; set; }
 
-        [BsonElement("Name")]
+        [BsonElement("Ad")]
         public string Name { get; set; }
 
-        [BsonElement("Surname")]
+        [BsonElement("Soyad")]
         public string Surname { get; set; }
 
-        [BsonElement("Company")]
+        [BsonElement("Firma")]
         public string Company { get; set; }
 
-        public ICollection<Contact> Contact { get; set; }
+        public IList<Contact> Contacts { get; set; }
     }
 }
