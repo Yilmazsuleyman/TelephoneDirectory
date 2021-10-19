@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
 using MongoDB.Bson;
@@ -13,6 +14,7 @@ namespace TelephoneDirectory.Models
         public Guid Id { get; set; }
 
         [BsonElement("Ad")]
+        [Required(ErrorMessage = "İsim Boş Olamaz!")]
         public string Name { get; set; }
 
         [BsonElement("Soyad")]

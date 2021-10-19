@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc.Rendering;
@@ -14,6 +15,7 @@ namespace TelephoneDirectory.Models
         public Guid Id { get; set; }
 
         [BsonElement("Bilgi Tipi")]
+        [Required(ErrorMessage = "Bilgi Tipi Seçiniz!")]
         public string InformationType { get; set; }
         [BsonIgnore]
         public List<SelectListItem> InformationTypes { get; } = new List<SelectListItem>
@@ -22,6 +24,7 @@ namespace TelephoneDirectory.Models
             new SelectListItem { Value = "Email", Text = "E-mail Adresi" },
             new SelectListItem { Value = "Location", Text = "Konum"  },
         };
+        [Required(ErrorMessage = "Bilgi İçeriği Giriniz!")]
         [BsonElement("Bilgi İçeriği")]
         public string InformationContent { get; set; }
     }
